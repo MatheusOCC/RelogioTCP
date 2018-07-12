@@ -1,6 +1,6 @@
 import java.io.ObjectInputStream;
 import java.net.Socket;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.swing.JOptionPane;
 
@@ -12,7 +12,7 @@ public class ClienteTCPBasico {
 	      Date data_atual = (Date)entrada.readObject();
 	      JOptionPane.showMessageDialog(null,"Data recebida do servidor:" + data_atual.toString());
 	      entrada.close();
-	      System.out.println("Conexão encerrada");
+	      System.out.println("Conexï¿½o encerrada");
 	    }
 	    catch(Exception e) {
 	      System.out.println("Erro: " + e.getMessage());

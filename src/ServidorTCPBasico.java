@@ -1,7 +1,7 @@
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.sql.Date;
+import java.util.Date;
 
 public class ServidorTCPBasico {
 	public static void main(String[] args) {
@@ -10,13 +10,13 @@ public class ServidorTCPBasico {
 	      ServerSocket servidor = new ServerSocket(12345);
 	      System.out.println("Servidor ouvindo a porta 12345");
 	      while(true) {
-	        // o método accept() bloqueia a execução até que
-	        // o servidor receba um pedido de conexão
+	        // o mï¿½todo accept() bloqueia a execuï¿½ï¿½o atï¿½ que
+	        // o servidor receba um pedido de conexï¿½o
 	        Socket cliente = servidor.accept();
 	        System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
 	        ObjectOutputStream saida = new ObjectOutputStream(cliente.getOutputStream());
 	        saida.flush();
-	        saida.writeObject(new Date(0));
+	        saida.writeObject(new Date());
 	        saida.close();
 	        cliente.close();
 	      }  
