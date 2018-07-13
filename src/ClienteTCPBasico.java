@@ -7,10 +7,10 @@ import javax.swing.JOptionPane;
 public class ClienteTCPBasico {
 	public static void main(String[] args) {
 	    try {
-	      Socket cliente = new Socket("Matheus",12345);
+	      Socket cliente = new Socket("127.0.0.1",12345);
 	      ObjectInputStream entrada = new ObjectInputStream(cliente.getInputStream());
 	      Date data_atual = (Date)entrada.readObject();
-	      JOptionPane.showMessageDialog(null,"Data recebida do servidor:" + data_atual.toString());
+	      System.out.println("Data recebida do servidor:" + data_atual.toString());
 	      entrada.close();
 	      System.out.println("Conex�o encerrada");
 	    }
